@@ -7,18 +7,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Caveat:wght@700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --accent-red: #c62828;
-      --paper: #fef3e2;
-      --cheetah-base: #f5d6a7;
-      --cheetah-spot: rgba(66,36,12,0.9);
-    }
-
     body { box-sizing: border-box; }
     @keyframes float { 0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(2deg)} }
-
-    /* Paper and cheetah pattern */
-    .scrapbook-bg{background-color:var(--paper)}
+      .scrapbook-bg{background-color:var(--paper)}
     .cheetah-pattern {
       background-color: var(--cheetah-base);
       background-image:
@@ -32,34 +23,17 @@
       background-repeat: repeat;
       background-blend-mode: overlay;
     }
-    @media (max-width:640px){
-      .cheetah-pattern { background-size: 200px 200px; }
-    }
 
-    /* Red accents and card styles */
-    .polaroid-card{
-      background:white;
-      padding:12px 12px 40px 12px;
-      box-shadow:0 10px 30px rgba(0,0,0,.15);
-      position:relative;
-      cursor:pointer;
-      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-      border: 3px solid rgba(255,255,255,0);
-    }
-    .polaroid-card:hover{
-      transform: translateY(-4px) rotate(0deg);
-      box-shadow: 0 18px 40px rgba(0,0,0,.22);
-      border-color: rgba(198,40,40,0.12);
-    }
+  
+    .polaroid-card{background:white;padding:12px 12px 40px 12px;box-shadow:0 10px 30px rgba(0,0,0,.15);position:relative;cursor:pointer}
     .handwritten{font-family:'Caveat',cursive}
-    .marker-text{font-family:'Permanent Marker',cursive;color:var(--accent-red)}
-    .read-view-content{white-space:pre-wrap;color:#2b2b2b;line-height:1.6}
+    .marker-text{font-family:'Permanent Marker',cursive}
+    .read-view-content{white-space:pre-wrap}
     .tape{position:absolute;top:-10px;left:40%;width:80px;height:25px;background:rgba(255,235,153,.7);transform:rotate(-4deg)}
     .date-stamp{position:absolute;bottom:8px;right:10px;font-size:14px;color:#555;transform:rotate(-6deg)}
     .coffee-stain{position:absolute;width:120px;height:120px;border:6px solid rgba(120,72,32,.25);border-radius:50%}
     .modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;z-index:50}
-    .modal-content{background:#fffdf8;max-width:800px;max-height:90vh;overflow:auto;padding:40px;box-shadow:0 20px 50px rgba(0,0,0,.3);outline:6px solid rgba(198,40,40,0.06)}
-    #toggleMode { color: var(--accent-red); border-bottom: 1px solid rgba(198,40,40,0.12); background: transparent; }
+    .modal-content{background:#fffdf8;max-width:800px;max-height:90vh;overflow:auto;padding:40px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
   </style>
 </head>
 <body class="h-full scrapbook-bg cheetah-pattern">
@@ -74,41 +48,41 @@
 
   <script>
     let currentPosts = [
+// comments are stored per post in-memory
   {
     __backendId: 'static-animal-farm',
     title: 'animal farm: its basically a mirror 🎱',
     author: 'chanel !',
     createdAt: new Date().toISOString(),
-    content: `I first read Animal Farm in 9th grade, and I fell in love immediately. Not because it was easy, short, or “a classic,” but because it felt honest in a way that unsettled me even then[...]
+    content: `I first read Animal Farm in 9th grade, and I fell in love immediately. Not because it was easy, short, or “a classic,” but because it felt honest in a way that unsettled me even then. Rereading it recently didn’t make it feel outdated. If anything, it felt uncomfortably current. The story didn’t change, the context did. That shift makes the book feel less like an allegory and more like a mirror, reflecting patterns I hadn’t noticed as a teenager.
 
 The Revolution Was Never the Problem
 
-One of the things that stuck with me is how reasonable the animals are at the beginning. Their demands aren’t radical. They aren’t asking for luxury or dominance, just fairness. Shared labor. Shar[...]
+One of the things that stuck with me is how reasonable the animals are at the beginning. Their demands aren’t radical. They aren’t asking for luxury or dominance, just fairness. Shared labor. Shared reward. No one above anyone else. When I first read this, I remember thinking, “if only real people were this logical.” But Orwell isn’t arguing that equality is unrealistic. He’s arguing that power without structure and accountability will always find a way to protect itself. The pigs don’t overthrow the system violently. They manage it. They administer it. They “handle things.” And everyone else slowly learns that leadership means distance and authority instead of responsibility. This hits differently now as I watch institutions demand loyalty without transparency. I even think about my first internship, where hard work felt like it should equal success, only to realize later that the people in power weren’t accountable to anyone. It felt like watching Napoleon run a farm I’d once naively believed in.
 
 Squealer Isn’t a Villain, He’s a System
 
-Squealer might be the most important character in the book, not because he’s evil, but because he’s effective. He doesn’t lie dramatically. He reframes. He overloads people with information. He [...]
+Squealer might be the most important character in the book, not because he’s evil, but because he’s effective. He doesn’t lie dramatically. He reframes. He overloads people with information. He speaks confidently enough that doubt feels embarrassing. And when logic fails, he uses fear. Squealer isn’t far off from how modern media can operate. Truth doesn’t disappear, it gets drowned. Confusion does the work for power. He represents communication without accountability, which feels painfully relevant in an age where we scroll faster than we think and trust headlines more than context.
 
 Napoleon, Trump, and the Performance of Strength
 
-Rereading Animal Farm, it’s impossible not to think about Donald Trump’s presidency. Not because Orwell predicted him, but because Orwell understood authoritarian behavior. Napoleon doesn’t lead[...]
+Rereading Animal Farm, it’s impossible not to think about Donald Trump’s presidency. Not because Orwell predicted him, but because Orwell understood authoritarian behavior. Napoleon doesn’t lead through competence. He leads through dominance, loyalty tests, and narrative control. Truth becomes whatever keeps him in power. Experts are dismissed. Critics are enemies. Strength is defined by control, not care. I remember a political discussion in high school where I first really noticed this pattern in real life. Facts didn’t matter. Loyalty did. Orwell had already mapped this out decades earlier, on a farm full of pigs.
 
 The Dogs and the Logic of Policing
 
-The dogs aren’t there to protect the animals. They enforce obedience. Fear replaces dialogue. Order becomes more important than justice. Orwell shows how quickly violence becomes normalized when it�[...]
+The dogs aren’t there to protect the animals. They enforce obedience. Fear replaces dialogue. Order becomes more important than justice. Orwell shows how quickly violence becomes normalized when it’s framed as “necessary.” I see this echoed today, especially in the way Trump used ICE. Enforcement wasn’t about care or safety, but compliance and intimidation. Fear became a tool. Just like on the farm, harm is accepted when it’s labeled protection.
 
 Boxer and the Myth of Merit
 
-Boxer hurts the most. His answer to everything is to work harder. That mindset feels painfully familiar. It mirrors generations of Black labor, loyalty, and sacrifice under systems that were never des[...]
+Boxer hurts the most. His answer to everything is to work harder. That mindset feels painfully familiar. It mirrors generations of Black labor, loyalty, and sacrifice under systems that were never designed to reward us fairly. Orwell isn’t criticizing effort. He’s exposing how systems exploit it. Boxer’s strength is real. What fails him is believing effort guarantees justice. Fairness has to be structural, not conditional.
 
 Education Isn’t Missing, It’s Withheld
 
-What hits harder now is the intentional ignorance on the farm. Most animals can’t read, and the pigs never fix that. Education is uneven by design. Histories are controlled. Power protects itself by[...]
+What hits harder now is the intentional ignorance on the farm. Most animals can’t read, and the pigs never fix that. Education is uneven by design. Histories are controlled. Power protects itself by limiting knowledge. This resonates deeply today as books about race, history, and inequality are removed from schools. Limiting access to information isn’t neutral, it’s control.
 
-The ending of Animal Farm doesn’t offer redemption. The pigs and humans blur together. Power reveals itself. The animals are left with recognition, not rescue. That’s why the book works. I’ve lo[...]
+The ending of Animal Farm doesn’t offer redemption. The pigs and humans blur together. Power reveals itself. The animals are left with recognition, not rescue. That’s why the book works. I’ve loved Animal Farm since 9th grade because it respects the reader. It doesn’t explain oppression abstractly. It shows how it grows quietly. Rereading it now doesn’t feel nostalgic. It feels instructional. Animal Farm isn’t just a story. It’s a mirror.`
   }
 ];
-
     let scrapbookMode = true;
 
     function renderPosts() {
@@ -116,12 +90,12 @@ The ending of Animal Farm doesn’t offer redemption. The pigs and humans blur t
       container.innerHTML = '';
 
       currentPosts.forEach((post, index) => {
-        const article = document.createElement('article');
+        const  = document.createElement('');
         const stainSize = 80 + Math.random() * 120;
         const stainTop = Math.random() * 120;
         const stainLeft = Math.random() * 120;
         const stainRotate = Math.random() * 360;
-        article.className = `polaroid-card cheetah-pattern ${scrapbookMode ? 'hover:rotate-1' : ''}`;
+        article.className = 'polaroid-card cheetah-pattern ${scrapbookMode ? 'hover:rotate-1' : ''};
         article.style.transform = scrapbookMode ? `rotate(${index % 2 === 0 ? '-2deg' : '2deg'})` : 'none';
 
         article.innerHTML = scrapbookMode
