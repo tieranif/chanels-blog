@@ -21,7 +21,7 @@
     .modal-content{background:#fffdf8;max-width:800px;max-height:90vh;overflow:auto;padding:40px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
   </style>
 </head>
-<body class="h-full scrapbook-bg">
+<body class="h-full scrapbook-bg cheetah-pattern">
   <main class="max-w-5xl mx-auto px-6 py-16">
     <div class="flex justify-between items-center mb-10">
       <h1 class="marker-text text-4xl"> chanel's blog</h1>
@@ -75,12 +75,12 @@ The ending of Animal Farm doesn’t offer redemption. The pigs and humans blur t
       container.innerHTML = '';
 
       currentPosts.forEach((post, index) => {
-        const article = document.createElement('article');
+        const  = document.createElement('');
         const stainSize = 80 + Math.random() * 120;
         const stainTop = Math.random() * 120;
         const stainLeft = Math.random() * 120;
         const stainRotate = Math.random() * 360;
-        article.className = `polaroid-card ${scrapbookMode ? 'hover:rotate-1' : ''}`;
+        article.className = 'polaroid-card cheetah-pattern ${scrapbookMode ? 'hover:rotate-1' : ''};
         article.style.transform = scrapbookMode ? `rotate(${index % 2 === 0 ? '-2deg' : '2deg'})` : 'none';
 
         article.innerHTML = scrapbookMode
